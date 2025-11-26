@@ -1,87 +1,232 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <title>ayumiのポートフォリオ</title>
-  </head>
-  <body>
-    <h1>ayumi</h1>
-    <img src="my-notion-face-portrait.png" width="20%" height"auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayumi's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 全体の設定 */
+    body {
+      font-family: 'Lato', 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
 
+    /* レイアウト調整 */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    /* ヘッダー周り */
+    header {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
     
-    <h2>About</h2>
-    <p>
-      オンライン英会話スクールを経営しています。<br>
-      英語でプログラミングも学べます。
-      私自身もプログラミングを学び、将来的には自社システムを作りたい！
-    </p>
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
 
-    <h3>Profile</h3>
-    <ul>
-      <li>名前 ayumi</li>
-      <li>所在地　茨城県</li>
-      <li>得意領域　英語</li>
-    </ul>
+    .subtitle {
+      color: #666;
+      font-size: 1rem;
+    }
 
-    <h3>Skills</h3>
-    <table>
-      <tr>
-        <th>OS</th>
-        <td>Windows, Mac両方使っています</td>
-      </tr>
-      <tr>
-        <th>Tool, MiddleWare</th>
-        <td>Git, GitHub</td>
-      </tr>
-      <tr>
-        <th>資格・免許</th>
-        <td>プログラミングの資格は無し</td>
-      </tr>
-    </table>
+    /* 画像スタイル */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; /* 丸く切り抜く */
+      object-fit: cover;
+      margin: 20px 0;
+      border: 4px solid #eaeaea;
+    }
 
-    <h3>Works</h3>
-    <p>アピールできる活動内容を書きましょう。</p>
-    <ul>
-      <li><a href="https://github.com/">GitHub</a></li>
-      <li><a href="https://qiita.com/">Qiita</a></li>
-      <li><a href="https://zenn.dev/">Zenn</a></li>
-      <li>
-        作った作品
-        <ul>
-          <li><a href="https://example.com/">作品 1</a></li>
-          <li><a href="https://example.com/">作品 2</a></li>
-        </ul>
-      </li>
-    </ul>
+    /* 引用（Ayumiさんの好きな言葉） */
+    .quote-section {
+      text-align: center;
+      padding: 30px;
+      background-color: #2c3e50; /* 星空のような濃紺 */
+      color: #fff;
+      margin: 30px -20px; /* 親要素のpaddingを打ち消して幅いっぱいに */
+      font-style: italic;
+    }
 
-    <h3>Contact</h3>
-    <p>連絡先や SNS のアカウントを書きましょう。</p>
-    <ul>
-      <li><a href="mailto:name@example.com">Mail</a></li>
-      <li><a href="https://twitter.com/n_yobikou">X(旧 Twitter)</a></li>
-      <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-    </ul>
+    /* セクション見出し */
+    h2, h3 {
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 10px;
+      margin-top: 40px;
+      color: #2c3e50;
+    }
 
-    <h3>History</h3>
-    <p>学歴、職歴、アルバイト、インターン経験など。</p>
-    <table>
-      <tr>
-        <th>2019 年</th>
-        <td><a href="https://dwango.co.jp/">株式会社ドワンゴ</a> 入社</td>
-      </tr>
-      <tr>
-        <th>2018 年</th>
-        <td>学校法人角川ドワンゴ学園 <a href="https://nnn.ed.jp/">N高等学校</a> 卒業</td>
-      </tr>
-      <tr>
-        <th>20XX 年</th>
-        <td>表彰、受賞歴、メディア掲載記事などあれば</td>
-      </tr>
-    </table>
-   <h3>好きな動画</h3>
-  <<iframe width="560" height="315" src="https://www.youtube.com/embed/WuYJPutOlCE?si=Wg5X8I_cE4zIpdKi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>>
+    /* テーブル装飾 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      width: 30%;
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+
+    /* 動画のレスポンシブ対応 */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* リンクの色 */
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
     
-  </body>
+    /* フッター */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Ayumi</h1>
+      <p class="subtitle">CEO of Bright Lab / English Educator / Learner</p>
+      <img src="my-notion-face-portrait.png" alt="Ayumi's portrait" class="profile-img">
+    </header>
+
+    <div class="quote-section">
+      "Only in the darkness can you see the stars."
+    </div>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        初めまして、Ayumiです。茨城県つくば市を拠点に、オンライン英会話スクール「Bright Lab」を経営しています。<br>
+        「言葉」と「技術」の力で人の可能性を広げることに情熱を注いでいます。<br>
+        現在は、自社の教育システムを自らの手で開発するため、JavaScriptを中心にプログラミング学習に挑戦中です。
+      </p>
+    </section>
+
+    <section>
+      <h3>Profile</h3>
+      <ul>
+        <li><strong>名前：</strong> Ayumi</li>
+        <li><strong>所在地：</strong> 茨城県</li>
+        <li><strong>趣味：</strong> ウォーキング、ミュージカル鑑賞</li>
+        <li><strong>目標：</strong> 自社システムの開発、IELTSスコアアップ</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Skills</h3>
+      <table>
+        <tr>
+          <th>Language</th>
+          <td>Japanese (Native), English (Teaching Level)</td>
+        </tr>
+        <tr>
+          <th>Programming</th>
+          <td>HTML/CSS, JavaScript (Learning DOM manipulation, Loops)</td>
+        </tr>
+        <tr>
+          <th>Business</th>
+          <td>Accounting Basics, Team Management, Curriculum Design</td>
+        </tr>
+        <tr>
+          <th>Tools</th>
+          <td>Git, GitHub, VS Code</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>History</h3>
+      <table>
+        <tr>
+          <th>Present</th>
+          <td>Online English School "Bright Lab" CEO</td>
+        </tr>
+        <tr>
+          <th>20XX年</th>
+          <td>英語講師として活動開始</td>
+        </tr>
+        <tr>
+          <th>Learning</th>
+          <td>プログラミング学習を開始（JavaScript）</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>Works & Media</h3>
+      <p>学習の記録や発信活動です。</p>
+      <ul>
+        <li><a href="https://github.com/">GitHub (Coding Log)</a></li>
+        <li><a href="#">School Website (Bright Lab)</a></li>
+        <li><a href="#">Blog / Note</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Inspiration</h3>
+      <p>私を奮い立たせてくれる、大好きな曲です。</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/WuYJPutOlCE?si=Wg5X8I_cE4zIpdKi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="mailto:name@example.com">Email Me</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Ayumi Portfolio. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+</body>
 </html>
